@@ -10,7 +10,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-By default, local development uses `./prompts.db`. For Vercel, set `DATABASE_URL` to a hosted PostgreSQL connection string such as a free Neon database. The Vercel cron invokes `/internal/process`; set `CRON_SECRET` when using an external scheduler or when protecting that endpoint.
+Set `DATABASE_URL` in `.env` locally and in Vercel to your Supabase PostgreSQL connection string. The application has no database fallback, so it cannot accidentally use SQLite. The Vercel cron invokes `/internal/process`; set `CRON_SECRET` when using an external scheduler or when protecting that endpoint.
 
 ## API
 

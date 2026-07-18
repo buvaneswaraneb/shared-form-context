@@ -4,7 +4,9 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    database_url: str = "sqlite+aiosqlite:///./prompts.db"
+    # Set this in .env locally and in the deployment environment. There is no
+    # fallback so the application cannot accidentally use SQLite in production.
+    database_url: str
     max_prompt_length: int = 50_000
     scheduler_enabled: bool = True
     scheduler_interval_seconds: float = 5.0
