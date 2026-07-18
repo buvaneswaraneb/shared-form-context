@@ -2,5 +2,5 @@
   "version": 2,
   "builds": [{ "src": "api/index.py", "use": "@vercel/python" }],
   "routes": [{ "src": "/(.*)", "dest": "api/index.py" }],
-  "crons": [{ "path": "/internal/process", "schedule": "*/5 * * * *" }]
+  "crons": [{ "path": "/internal/process", "schedule": "0 0 * * *" }]
 }
